@@ -1,1 +1,0 @@
-{"version":3,"sources":["main/main.scss","main/main.css"],"names":[],"mappings":"AAAA;EACC,gBAAA;ACCD","file":"main.css","sourcesContent":["div{\r\n\tbackground: #fff;\r\n}","div {\n  background: #fff;\n}"]}

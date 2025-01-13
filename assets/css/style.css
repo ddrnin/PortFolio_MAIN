@@ -1,0 +1,45 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  height: 200vh; /* 스크롤 확인을 위해 */
+  background: #f0f0f0;
+}
+body .scroll-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .scroll-container .line {
+  position: relative;
+  width: 10px;
+  height: 100%;
+  background: #e0e0e0;
+}
+body .scroll-container .line .line2 {
+  background: linear-gradient(to bottom, #590fbf, #e0e0e0);
+}
+body .scroll-container .line .circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body .scroll-container .line .circle.circle-0 {
+  top: 0;
+  background: #590fbf;
+}
+body .scroll-container .line .circle.circle-50 {
+  top: 50%;
+}
+body .scroll-container .line .circle.circle-100 {
+  top: 100%;
+}
+/*# sourceMappingURL=style.css.map */
