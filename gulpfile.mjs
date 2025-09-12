@@ -123,3 +123,4 @@ gulp.task('watch', function(){
 // default - 터미널에 gulp 명령어 입력하면 실행되는 작업. 여기서는 watch가 실행
 gulp.task('default', gulp.series(['watch']));
 
+gulp.task('build', gulp.series(['html', 'sass', 'js']));
