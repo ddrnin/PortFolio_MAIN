@@ -54,6 +54,11 @@ gulp.task('html', function(){
 		indent_size: 4,
 		indent_width_tabs: true
 	}))
+	.pipe(rename(function(path) {
+		if (path.basename === "main") {
+			path.basename = "index";
+		}
+	}))
 	// 처리된 html파일을 /html에 저장
 	.pipe(gulp.dest(dist.html))
 	// .pipe(gulp.dest(dist.img))
