@@ -1,9 +1,8 @@
 {
-	"routes": [
-	  { "handle": "filesystem" },
+	"rewrites": [
 	  {
-		"src": "/",
-		"dest": "/html/main/main.html"
+		"source": "/()",
+		"destination": "/html/main/main.html"
 	  }
 	]
   }
