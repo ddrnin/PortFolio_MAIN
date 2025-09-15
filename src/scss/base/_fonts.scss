@@ -1,0 +1,44 @@
+// Pretendard subset 
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 400;
+	font-display: swap;
+	src: url("/assets/fonts/Pretendard/Pretendard-Regular.subset.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 500;
+	font-display: swap;
+	src: url("/assets/fonts/Pretendard/Pretendard-Medium.subset.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 700;
+	font-display: swap;
+	src: url("/assets/fonts/Pretendard/Pretendard-Bold.subset.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 900;
+	font-display: swap;
+	src: url("/assets/fonts/Pretendard/Pretendard-Black.subset.woff2") format("woff2");
+}
+// GmarketSans main
+@font-face {
+	font-family: "GmarketSans";
+	font-weight: 300;
+	font-display: swap;
+	src: url("/assets/fonts/GmarketSans/GmarketSansLight.woff2") format("woff2");
+}
+@font-face {
+	font-family: "GmarketSans";
+	font-weight: 500;
+	font-display: swap;
+	src: url("/assets/fonts/GmarketSans/GmarketSansMedium.woff2") format("woff2");
+}
+@font-face {
+	font-family: "GmarketSans";
+	font-weight: 700;
+	font-display: swap;
+	src: url("/assets/fonts/GmarketSans/GmarketSansBold.woff2") format("woff2");
+}

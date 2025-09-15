@@ -36,7 +36,7 @@ const dist = {
 	// img: dir.dist + 'assets/img/'
 }
 
-// main.html을 index.html로 처리
+// main.html을 index.html로 컴파일
 gulp.task('main-to-index', function(){
 	return gulp.src(src.html + 'main/main.html')
 		.pipe(fileinclude({
@@ -82,17 +82,14 @@ gulp.task('sass', function(){
 			indentWidth: 1
 		}
 	};
-	return gulp.src([src.css + '*.scss', src.css + '/**/*.scss'])
+	return gulp.src([
+		src.css + 'style.scss' // 엔트리 단일 파일만 컴파일
+	])
 	.pipe(sourcemaps.init())
 	.pipe(sass(scssOption).on('error', sass.logError))
 	.pipe(autoprefixer())
 	.pipe(sourcemaps.write('./'))
-	// .pipe(cssmin())
-	// 처리된 sass파일을 assets/css/에 1차 저장
 	.pipe(gulp.dest(dist.css))
-	// .pipe(rename('style.min.css'))
-	// 1차 저장된 css들을 이름을 바꾸고 압축해서 2차저장
-	// .pipe(gulp.dest(dist.css))
 	.pipe(browserSync.reload({ stream: true }))
 });
 
