@@ -36,15 +36,29 @@ const dist = {
 	// img: dir.dist + 'assets/img/'
 }
 
-
+// main.html을 index.html로 처리
+gulp.task('main-to-index', function(){
+	return gulp.src(src.html + 'main/main.html')
+		.pipe(fileinclude({
+			prefix: '@@',
+			basepath: '@file'
+		}))
+		.pipe(beautifycode({
+			indent_size: 4,
+			indent_width_tabs: true
+		}))
+		.pipe(rename('index.html'))
+		.pipe(gulp.dest('./'))  // 루트에 저장
+		.pipe(browserSync.reload({ stream: true }));
+});
 // html 처리
 gulp.task('html', function(){
 	return gulp.src([
 		src.html + '*.html',
 		src.html + '**/*.html',
 		src.html + '**/*.css',
-		// src.img + "**/*",
-		'!' + src.html + '_partials/*.html'
+		'!' + src.html + '_partials/*.html',
+		'!' + src.html + 'main/main.html'
 	])
 	.pipe(fileinclude({
 		prefix: '@@',
@@ -54,14 +68,7 @@ gulp.task('html', function(){
 		indent_size: 4,
 		indent_width_tabs: true
 	}))
-	.pipe(rename(function(path) {
-		if (path.basename === "main") {
-			path.basename = "index";
-		}
-	}))
-	// 처리된 html파일을 /html에 저장
 	.pipe(gulp.dest(dist.html))
-	// .pipe(gulp.dest(dist.img))
 	.pipe(browserSync.reload({ stream: true }))
 });
 
@@ -101,25 +108,14 @@ gulp.task('js', function(){
 	.pipe(browserSync.reload({ stream: true }));
 });
 
-// // img 처리
-// gulp.task('img', function(){
-// 	return gulp.src([
-// 		src.img + '*.*',
-// 		src.img + '/**/*.*',
-// 		src.img + '/**/**/*.*'
-// 	])
-// 	.pipe(gulp.dest(dist.img))
-// 	.pipe(browserSync.reload({ stream: true }));
-// })
-
 gulp.task('watch', function(){
 	browserSync.init({
 		port: 3009,
 		server: {
-			index: "./html/main/main.html"
+			index: "./index.html"
 		}
 	});
-	watch(src.html, gulp.series('html'));
+	watch(src.html, gulp.series('html' , 'main-to-index'));
 	watch(src.css, gulp.series('sass'));
 	watch(src.js, gulp.series('js'));
 	// watch(src.img, gulp.series('img'));
@@ -128,4 +124,4 @@ gulp.task('watch', function(){
 // default - 터미널에 gulp 명령어 입력하면 실행되는 작업. 여기서는 watch가 실행
 gulp.task('default', gulp.series(['watch']));
 
-gulp.task('build', gulp.series(['html', 'sass', 'js']));
+gulp.task('build', gulp.series(['html', 'main-to-index' ,'sass', 'js']));
