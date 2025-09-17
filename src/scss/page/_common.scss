@@ -1,0 +1,12 @@
+body {
+	margin: 0;
+	height: 200vh; /* 스크롤 확인을 위해 */
+	background: #000000;
+
+	.font_test {
+		@include title42;
+	}
+	.text_box {
+		@include text24;
+	}
+}
