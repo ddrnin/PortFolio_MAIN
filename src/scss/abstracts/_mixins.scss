@@ -1,0 +1,152 @@
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+// Font Family
+$font-pretendard: 'Pretendard', 'sans-serif';
+$font-gmarket: 'GmarketSans', 'sans-serif';
+$font-neurimbo: 'neurimboGothicRegular', 'sans-serif';
+
+// Font Family Mixins
+@mixin font-pretendard {
+	font-family: $font-pretendard;
+}
+@mixin font-gmarket {
+	font-family: $font-gmarket;
+}
+@mixin font-neurimbo {
+	font-family: $font-neurimbo;
+}
+
+$font-size-map: (
+	"display" : 250px, 
+	"title" : 168px, 
+	"title42" : 42px, 
+	"title36" : 36px,
+	"text24" : 24px,
+	"text20" : 20px,
+	"text16" : 16px,
+	"text13" : 13px,
+);
+
+$font-weight-map: (
+	"display" : 500, 
+	"title" : 400, 
+	"title42" : 400, 
+	"title36" : 700,
+	"text24" : 400,
+	"text20" : 500, 
+	"text16" : 500,
+	"text13" : 500,
+);
+
+$font-letter-spacing-map: (
+	"display" : 0, 
+	"title" : 0, 
+	"title42" : 0, 
+	"title36" : 0,
+	"text24" : 0,
+	"text20" : 0,
+	"text16" : 0,
+	"text13" : 0,
+);
+
+$font-line-height-map: (
+	"display" : 100% , 
+	"title" : 100%, 
+	"title42" : 100%, 
+	"title36" : 100%,
+	"text24" : 100%,
+	"text20" : 140%,
+	"text16" : 100%,
+	"text13" : 100%,
+);
+
+@function font-size($name) {
+	@return map-get($font-size-map, $name);
+}
+@mixin font-size($name) {
+	font-size: font-size($name);
+}
+
+@function font-weight($name) {
+	@return map-get($font-weight-map, $name);
+}
+@mixin font-weight($name) {
+	font-weight: font-weight($name);
+}
+
+@function font-letter-spacing($name) {
+	@return map-get($font-letter-spacing-map, $name);
+}
+@mixin font-letter-spacing($name) {
+	letter-spacing: font-letter-spacing($name);
+}
+
+@function font-line-height($name) {
+	@return map-get($font-line-height-map, $name);
+}
+@mixin font-line-height($name) {
+	line-height: font-line-height($name);
+}
+
+@mixin display {
+	@include font-size('display');
+	@include font-weight('display');
+	@include font-letter-spacing('display');
+	@include font-line-height('display');
+}
+
+@mixin title {
+	@include font-size('title');
+	@include font-weight('title');
+	@include font-letter-spacing('title');
+	@include font-line-height('title');
+}
+
+@mixin title42 {
+	@include font-size('title42');
+	@include font-weight('title42');
+	@include font-letter-spacing('title42');
+	@include font-line-height('title42');
+}
+
+@mixin title36 {
+	@include font-pretendard;
+	@include font-size('title36');
+	@include font-weight('title36');
+	@include font-letter-spacing('title36');
+	@include font-line-height('title36');
+}
+
+@mixin text24 {
+	@include font-size('text24');
+	@include font-weight('text24');
+	@include font-letter-spacing('text24');
+	@include font-line-height('text24');
+}
+
+@mixin text20 {
+	@include font-pretendard;
+	@include font-size('text20');
+	@include font-weight('text20');
+	@include font-letter-spacing('text20');
+	@include font-line-height('text20');
+}
+
+@mixin text16 {
+	@include font-pretendard;
+	@include font-size('text16');
+	@include font-weight('text16');
+	@include font-letter-spacing('text16');
+	@include font-line-height('text16');
+}
+
+@mixin text13 {
+	@include font-pretendard;
+	@include font-size('text13');
+	@include font-weight('text13');
+	@include font-letter-spacing('text13');
+	@include font-line-height('text13');
+}

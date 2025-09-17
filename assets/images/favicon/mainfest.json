@@ -1,0 +1,11 @@
+{
+	"name" : "ddrnin",
+    "icons" : [{
+    	"src":"/assets/images/common/Favicon.svg",
+        "sizes": "any",
+      	"type": "image/svg+xml"
+    }],
+    "background_color" : "#ffffff",
+    "theme_color":"#ffffff",
+    "display" : "fullscreen"
+}

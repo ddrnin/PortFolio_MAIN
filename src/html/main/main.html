@@ -5,55 +5,57 @@
 </head>
 <body>
 	
-	
-	<div class="scroll-container">
+	<div class="font_test">안녕하1세용?</div>
+	<!-- <div class="scroll-container">
 		<div class="line">
-			<div class="font_test">안녕하세용?</div>
-			<div class="circle circle-0">111</div>
+			<div class="font_test">안녕하1세용?</div>
+			<div class="circle circle-0">11</div>
 			<div class="circle circle-50">1</div>
 			<div class="circle circle-100">1</div>
 			<div class="line2"></div>
 		</div>
+	</div> -->
+	111
+	<div class="text_box">
+		11111
 	</div>
-	
-
 	<script>
-		const mainWrap = $('.line2');
-		gsap.to(mainWrap, {
-			scrollTrigger: {
-				trigger: '.circle-0',
-				start: 'top 0%',
-				end: '+=100%',
-				scrub: true,
-				// markers: true,
-			},
-			height: '100%'
-			// background: '#000'
-		});
-		const circle02 = $('.circle-50');
-		gsap.to(circle02, {
-			scrollTrigger: {
-				trigger: '.circle-50',
-				start: 'top 12%',
-				end: '+=0%',
-				scrub: true,
-				markers: true,
-			},
-			// height: '100%'
-			background: '#590fbf'
-		});
-		const circle03 = $('.circle-100');
-		gsap.to(circle03, {
-			scrollTrigger: {
-				trigger: '.circle-50',
-				start: 'top -40%',
-				end: '+=0%',
-				scrub: true,
-				markers: true,
-			},
-			// height: '100%'
-			background: '#590fbf'
-		});
+		// const mainWrap = $('.line2');
+		// gsap.to(mainWrap, {
+		// 	scrollTrigger: {
+		// 		trigger: '.circle-0',
+		// 		start: 'top 0%',
+		// 		end: '+=100%',
+		// 		scrub: true,
+		// 		// markers: true,
+		// 	},
+		// 	height: '100%'
+		// 	// background: '#000'
+		// });
+		// const circle02 = $('.circle-50');
+		// gsap.to(circle02, {
+		// 	scrollTrigger: {
+		// 		trigger: '.circle-50',
+		// 		start: 'top 12%',
+		// 		end: '+=0%',
+		// 		scrub: true,
+		// 		markers: true,
+		// 	},
+		// 	// height: '100%'
+		// 	background: '#590fbf'
+		// });
+		// const circle03 = $('.circle-100');
+		// gsap.to(circle03, {
+		// 	scrollTrigger: {
+		// 		trigger: '.circle-50',
+		// 		start: 'top -40%',
+		// 		end: '+=0%',
+		// 		scrub: true,
+		// 		markers: true,
+		// 	},
+		// 	// height: '100%'
+		// 	background: '#590fbf'
+		// });
 	</script>
 </body>
 </html>

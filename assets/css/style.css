@@ -1,48 +1,4 @@
 @charset "UTF-8";
-body {
-  margin: 0;
-  height: 200vh; /* 스크롤 확인을 위해 */
-  background: #f0f0f0;
-}
-body .scroll-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-body .scroll-container .line {
-  position: relative;
-  width: 10px;
-  height: 100%;
-  background: #e0e0e0;
-}
-body .scroll-container .line .line2 {
-  background: linear-gradient(to bottom, #590fbf, #e0e0e0);
-}
-body .scroll-container .line .circle {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: #e0e0e0;
-  border-radius: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-body .scroll-container .line .circle.circle-0 {
-  top: 0;
-  background: #590fbf;
-}
-body .scroll-container .line .circle.circle-50 {
-  top: 50%;
-}
-body .scroll-container .line .circle.circle-100 {
-  top: 100%;
-}
-
 @font-face {
   font-family: "Pretendard";
   font-weight: 400;
@@ -84,5 +40,194 @@ body .scroll-container .line .circle.circle-100 {
   font-weight: 700;
   font-display: swap;
   src: url("/assets/fonts/GmarketSans/GmarketSansBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "neurimboGothicRegular";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/neurimboGothicRegular.woff2") format("woff2");
+}
+/*-------------------------------------------------------------------
+	@Resets
+-------------------------------------------------------------------*/
+html, body {
+  height: 100%;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+::before, ::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html, body, div, ul, ol, dl, li, dt, dd, p, h1, h2, h3, h4, h5, h6, table, thead, tbody, tr, th, td, caption, address, article, aside,
+canvas, details, figure, figcaption, main, footer, header, menu, nav, section,
+button, select, textarea, input, form, fieldset, legend, label, a, span, strong, em, address, pre, code, dfn, small, i, b {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  font-style: normal;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -o-box-sizing: inherit;
+  -webkit-print-color-adjust: exact;
+}
+
+main, article, aside, canvas, details, figure, figcaption, footer, header, menu, nav, section {
+  display: block;
+}
+
+[hidden] {
+  display: none;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+img, a, frame, iframe, fieldset {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+caption {
+  height: 1px;
+  overflow: hidden;
+}
+
+legend {
+  position: fixed;
+  overflow: hidden;
+  border: 0;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+button {
+  overflow: hidden;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  border: 0px;
+  padding: 0px;
+}
+
+input[type=checkbox], input[type=radio], select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+}
+
+textarea {
+  resize: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+input::search-decoration,
+input::search-cancel-button,
+input::search-results-button,
+input::search-results-decoration {
+  display: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+}
+
+input:disabled,
+textarea:disabled {
+  opacity: 1;
+  background: transparent;
+  -webkit-text-fill-color: inherit;
+}
+
+body {
+  position: relative;
+  overflow-y: auto;
+  font-family: "neurimboGothicRegular", "sans-serif";
+  font-size: 16px;
+  word-break: normal;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+body.useragent-ios {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+body.useragent-android {
+  padding-bottom: 20px;
+}
+
+body {
+  margin: 0;
+  height: 200vh; /* 스크롤 확인을 위해 */
+  background: #f0f0f0;
+}
+body .font_test {
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 100%;
+}
+body .text_box {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 100%;
 }
 /*# sourceMappingURL=style.css.map */
