@@ -1,35 +1,66 @@
 header {
-	max-width: 1020px;
+	max-width: 1024px;
 	margin: 80px auto 0;
+	@include respond-to(desktop) {
+		padding: 0 30px;
+	};
 	.header-container {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		.header-{
 			&logo {
-				
+				width: 131px;
+				height: auto;
 			}
 			&actions {
+				position: relative;
 				display: flex;
-				align-items: center;
-				gap: 50px;
+				justify-content: flex-end;
+				width: 412px;
 				color: $white;
 				.date-container {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%);
 					@include flex-center;
 					width: 212px;
-					flex-shrink: 0 0 212px;
 					height: 50px;
 					border: 2px solid $white;
-					border-radius: 40px;
+					border-radius: 35px;
 					@include text24;
 					box-sizing: border-box;
-					.date-{
-						&text {
-							padding: 0px 16px 8px;
-							
+					overflow: hidden;
+					transition: 0.5s;
+					@include respond-to(tablet) {
+						width: 100px;
+					}
+					p {
+						width: 212px;
+						position: absolute;
+						padding: 0px 16px 8px;
+						text-align: center;
+						transition: 0.5s ease-in-out;
+						&.date-{
+							&text {
+								
+							}
+							&time {
+								transform: translateX(-100%);
+							}
 						}
-						&time {
-
+					}
+					&:hover {
+						width: 192px;
+						p {
+							&.date-{
+								&text {
+									transform: translateX(100%);
+								}
+								&time {
+									transform: translateX(0%);
+								}
+							}
 						}
 					}
 				}
